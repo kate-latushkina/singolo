@@ -28,6 +28,7 @@ body {
     font-size: 30px;
     color: #666d89;
     margin: 0;
+    letter-spacing: 0.2px;
 }
 .port-paragraph {
     font-family: 'Lato-Light', sans-serif;
@@ -65,7 +66,7 @@ body {
 #port-icon {
     justify-content: space-between;
     width: 24%;
-    margin-right: 19px;
+    margin-right: 20px;
 }
 #port-icon:last-child {
     margin-right: 0;
@@ -75,10 +76,13 @@ body {
     max-width: 220px;
     height: 187px;
 }
+#port-icon:nth-child(n+5) {
+    display: none;
+}
 
 /* About Us */
 #about {
-    padding: 60px 0;
+    padding: 60px 0 63px; 
     background-color: #f2f2f2;
     border-bottom: 6px solid white;
 }
@@ -98,22 +102,18 @@ body {
     text-align: justify;
     margin-bottom: 0;
 }
-
 .team {
     display: flex;
-    margin-top: 45px;
+    margin-top: 44px;
 }
 #our-team {
     justify-content: space-between;
     width: 33%;
     margin-right: 19px;
+    overflow: hidden;
 }
 #our-team:last-child {
     margin-right: 0;
-}
-#our-team img {
-    width: 300px;
-    height: 300px;
 }
 .person-name {
     font-family: 'Lato-Black', sans-serif;
@@ -121,6 +121,7 @@ body {
     color: #666d89;
     margin-bottom: 0;
     margin-top: 12px;
+    white-space: nowrap;
 }
 .about-person {
     margin-top: 9px;
@@ -131,3 +132,10 @@ body {
     text-align: justify;
     margin-bottom: 0;
 }
+.social-icons {
+    display: flex;
+    margin-top: 23px;
+}
+.social-icons a {
+    margin-right: 8px;
+} 
