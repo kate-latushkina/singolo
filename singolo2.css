@@ -134,8 +134,30 @@ body {
 }
 .social-icons {
     display: flex;
-    margin-top: 23px;
+    margin-top: 24px;
 }
-.social-icons a {
-    margin-right: 8px;
-} 
+
+.social__link {
+    display: block;
+    text-decoration: none;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #767E9E;
+    border-radius: 50%;
+    padding: 6px 0 0 7px;
+    margin-right: 7px;
+}
+
+.social__link:hover {
+    background-color: #767E9E;
+}
+
+.social__link:hover .svg-item {
+    fill: #fff;
+}
+
+.svg-item {
+    width: 16px;
+    height: 16px;
+    fill: #656d89;
+}
