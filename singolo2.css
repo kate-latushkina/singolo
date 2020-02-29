@@ -38,14 +38,15 @@ body {
     letter-spacing: -0.23px;
     margin-bottom: 14px;
 }
-.nav-button {
+.navigation {
     display: flex;
     padding-left: 0;
     margin-top: 0;
     margin-bottom: 19px;
 }
-.nav-button li {
-    list-style-type: none;
+.nav-button {
+    background-color: transparent;
+    cursor: pointer;
     color: #6c7491;
     font-size: 12px;
     flex-wrap: nowrap;
@@ -55,10 +56,13 @@ body {
     margin-right: 9px;
     
 }
-.nav-button li:hover {
+.nav-button:hover {
     border-color: white;
     color: white;
-    cursor: pointer;
+}
+.nav-button:first-child {
+    border-color: white;
+    color: white;
 }
 .potr-pic {
     display: flex;
