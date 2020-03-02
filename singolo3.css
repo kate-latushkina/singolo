@@ -1,0 +1,40 @@
+@import 'fonts.css';
+body {
+    font-family: 'Lato-Regular', sans-serif;
+    max-width: 100%;
+    margin: 0;
+}
+.wrapper {
+    max-width: 1020px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+.container {
+    max-width: 939px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+ 
+/* contact */
+.contact {
+    padding: 60px 0 60px 0;
+    background-color: #f06c64;
+}
+.contact-title {
+    font-family: 'Lato-Black', sans-serif;
+    font-size: 30px;
+    color: #f0d8d9;
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+.contact-rapagraph {
+    font-family: 'Lato-Light', sans-serif;
+    font-size: 18px;
+    color: #f0d8d9;
+    margin-top: 19px;
+    line-height: 29px;
+    letter-spacing: -0.24px;
+    
+}
