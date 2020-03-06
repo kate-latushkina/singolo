@@ -68,6 +68,9 @@ body {
     color: #f48c8f;
     font-size: 12px;
 }
+.form-input:required:valid {
+    background-color: #a2e0b5;
+}
 #form-area {
     font-family: 'Lato-Regular', sans-serif;
     width: 100%;
