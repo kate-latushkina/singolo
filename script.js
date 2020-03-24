@@ -11,7 +11,6 @@ function onScroll(event) {
   section.forEach((el) => {
     if (el.offsetTop <= currentPos && (el.offsetTop + el.offsetHeight) > currentPos) {
       links.forEach((a) => {
-        console.log(window.pageYOffset)
         a.classList.remove('nav-active');
         if (window.pageYOffset < '600') {
           headerLink.classList.add('nav-active');         
