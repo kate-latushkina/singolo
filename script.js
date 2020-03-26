@@ -12,7 +12,9 @@ function onScroll(event) {
     if (el.offsetTop <= currentPos && (el.offsetTop + el.offsetHeight) > currentPos) {
       links.forEach((a) => {
         a.classList.remove('nav-active');
-        if (window.pageYOffset < '600') {
+        headerLink.classList.remove('nav-active');
+        contactLink.classList.remove('nav-active');
+        if (window.pageYOffset <= '604') {
           headerLink.classList.add('nav-active');         
         }
         if (window.pageYOffset > '2550') {
@@ -156,17 +158,24 @@ submitButton.onclick = function () {
       textDescription.innerHTML = `Description: ${describe.value}`;
     } 
     event.preventDefault();
+    document.querySelector('body').style.overflow = 'hidden';
   } 
+  
 }
 
 closeModal.onclick = function () {
   modal.style.display = 'none';
   myForm.reset();
+  document.querySelector('body').style.overflow = 'auto';
 }
 
 window.onclick = function () {
   if (event.target == modal) {
     modal.style.display = 'none';
     myForm.reset();
+    document.querySelector('body').style.overflow = 'auto';
   }
 }
+
+
+
