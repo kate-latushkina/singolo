@@ -43,6 +43,7 @@ header {
     font-family: 'Lato-Bold';
     width: 30%;
     letter-spacing: -0.82px;
+    z-index: 5;
 }
 .logo span {
     color: #da716b;
@@ -859,22 +860,101 @@ footer {
     .foo {
         display: block;
     }
+
+
+
     header {
         padding: 18px 0 15px;
         
     }
-    .holder {
-        display: flex;
-        justify-content: center;
-    }
+
     .logo {
         display: flex;
         justify-content: center;
+        width: 100%;
         font-size: 20px;
+        margin-left: -15px;
+        transition: all ease;
+    }
+    /* nav {
+        display: none;
+    } */
+
+
+    .header-burger {
+        position: relative;
+        width: 30px;
+        height: 20px;
+    }
+    .header-burger span {
+        position: absolute;
+        background-color: white;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        border-radius: 15px;
+        top: 9px;
+        z-index: 5;
+    }
+    .header-burger::before,
+    .header-burger::after {
+        content: '';
+        background-color: white;
+        border-radius: 15px;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        z-index: 5;
+    }
+    .header-burger::before {
+        top: 1px;
+    }
+    .header-burger::after {
+        bottom: 0;
     }
     nav {
-        display: none;
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 70%;
+        height: 100%;
+        background-color: #2D303A;
+        display: block;
+        margin: 0;
+        transition: all 0.5s ease;
     }
+    .menu {
+        display: block;
+        margin-top: 55%;
+        margin-left: 80px;
+    }
+    .menu li {
+        display: block;
+        margin-top: 15px;
+        font-size: 18px;
+    }
+    li:not(:last-child)::after {
+        content: '';
+    }
+
+    .header-burger.burger-active {
+        transform: rotate(90deg);
+        z-index: 5;
+        transition: all 0.5s ease;
+        
+    }
+    nav.burger-active {
+        left: 0;
+    }
+    body.lock {
+        overflow: hidden;
+    }
+    .logo-burger {
+        margin-left: 20px;
+        justify-content: start;
+    }
+    
 }
 
 @media (max-width:  680px) {

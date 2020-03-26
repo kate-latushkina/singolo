@@ -28,6 +28,17 @@ function onScroll(event) {
   })
 }
 
+// Header burger
+const burgerButton = document.querySelector('.header-burger');
+const burgerNav = document.querySelector('nav');
+
+burgerButton.onclick = function () {
+  burgerButton.classList.toggle('burger-active');
+  burgerNav.classList.toggle('burger-active');
+  document.querySelector('.logo').classList.toggle('logo-burger');
+  document.querySelector('body').classList.toggle('lock');
+}
+
 // Phone
 const phoneLeft = document.querySelector('.vertical');
 const avatarLeft = document.querySelector('.avatar-left');
