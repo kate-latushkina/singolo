@@ -1,32 +1,39 @@
 // Header scroll
-document.addEventListener('scroll', onScroll);
+const menuLinks = document.querySelectorAll(".menu li a");
 
-function onScroll(event) {
-  const currentPos = window.scrollY; 
-  const section = document.querySelectorAll('section');
-  const links = document.querySelectorAll('.menu a');
-  const headerLink = document.querySelector('.menu a[href$="#home"]');
-  const contactLink = document.querySelector('.menu a[href$="#contact"]');
+document.addEventListener("scroll", changeMenuActiveLink);
+window.onload = changeMenuActiveLink();
 
-  section.forEach((el) => {
-    if (el.offsetTop <= currentPos && (el.offsetTop + el.offsetHeight) > currentPos) {
-      links.forEach((a) => {
-        a.classList.remove('nav-active');
-        headerLink.classList.remove('nav-active');
-        contactLink.classList.remove('nav-active');
-        if (window.pageYOffset <= '604') {
-          headerLink.classList.add('nav-active');         
+function changeMenuActiveLink(event) {
+  const pageHeight = Math.max(
+    document.body.scrollHeight, document.documentElement.scrollHeight,
+    document.body.offsetHeight, document.documentElement.offsetHeight,
+    document.body.clientHeight, document.documentElement.clientHeight
+  );
+  const clientScreenHeight = document.documentElement.clientHeight;
+  const clientTopPosition = window.pageYOffset;
+  const clientBottomPosition = clientScreenHeight + clientTopPosition;
+
+  const currentPositionY = window.scrollY;
+  const tagsWithId = document.querySelectorAll('[id]');
+
+  tagsWithId.forEach( tag => {
+    if (tag.offsetTop - 90 <= currentPositionY &&
+       (tag.offsetTop + tag.offsetHeight - 90) > currentPositionY) {
+      menuLinks.forEach( link => {
+        link.classList.remove("nav-active");
+        if(clientBottomPosition + 10 >= pageHeight) {
+          menuLinks[menuLinks.length - 1].classList.add("nav-active");
+        } else {
+          if (tag.getAttribute("id") === link.getAttribute("href").substring(1)) {
+            link.classList.add("nav-active");
+          }
         }
-        if (window.pageYOffset > '2550') {
-          contactLink.classList.add('nav-active');
-        }
-        else if (el.getAttribute('id') == a.getAttribute('href').substring(1)) {
-          a.classList.add('nav-active');
-        } 
-      })
+      });
     }
-  })
+  }); 
 }
+
 
 // Header burger
 const burgerButton = document.querySelector('.header-burger');
@@ -35,9 +42,22 @@ const burgerNav = document.querySelector('nav');
 burgerButton.onclick = function () {
   burgerButton.classList.toggle('burger-active');
   burgerNav.classList.toggle('burger-active');
+  burgerNav.classList.toggle('shadow');
   document.querySelector('.logo').classList.toggle('logo-burger');
   document.querySelector('body').classList.toggle('lock');
-}
+};
+
+document.addEventListener('click', (e) => {
+  let isBurgerActive = document.querySelector('.header-burger').classList.contains('burger-active');
+  if(isBurgerActive && e.target.tagName === 'A' || e.target.tagName === 'NAV') {
+    document.querySelector('.header-burger').classList.remove('burger-active');
+    document.querySelector('nav').classList.remove('burger-active');
+    burgerNav.classList.remove('shadow');
+    document.querySelector('.logo').classList.remove('burger-active');
+    document.querySelector('body').classList.remove('lock');
+  }
+}, true);
+
 
 // Phone
 const phoneLeft = document.querySelector('.vertical');
@@ -151,7 +171,7 @@ const closeModal = document.querySelector('.close-modal')
 
 submitButton.onclick = function () {
   if (formName.validity.valid && formEmail.validity.valid) {
-    modal.style.display = 'block';
+    modal.style.display = 'flex';
     if (subject.value.length > 0 && describe.value.length > 0) {
       topic.innerHTML = `Subject: ${subject.value}`;
       textDescription.innerHTML = `Description: ${describe.value}`;
@@ -169,7 +189,7 @@ submitButton.onclick = function () {
       textDescription.innerHTML = `Description: ${describe.value}`;
     } 
     event.preventDefault();
-    document.querySelector('body').style.overflow = 'hidden';
+    document.querySelector('body').classList.add('lock');
   } 
   
 }
@@ -177,14 +197,14 @@ submitButton.onclick = function () {
 closeModal.onclick = function () {
   modal.style.display = 'none';
   myForm.reset();
-  document.querySelector('body').style.overflow = 'auto';
+  document.querySelector('body').classList.remove('lock');
 }
 
 window.onclick = function () {
   if (event.target == modal) {
     modal.style.display = 'none';
     myForm.reset();
-    document.querySelector('body').style.overflow = 'auto';
+    document.querySelector('body').classList.remove('lock');
   }
 }
 
