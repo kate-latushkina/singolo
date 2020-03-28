@@ -69,7 +69,6 @@ li a {
     display: inline;
     letter-spacing: -0.3px;
 }
-
 .nav-active {
     color: #da716b;
 }
@@ -90,7 +89,6 @@ li:not(:last-child)::after {
     border-bottom: 6px solid #d96c6f;
     transition: all ease 0.5s;
 }
-
 .slider:hover {
     cursor: pointer;
 }
@@ -129,7 +127,6 @@ li:not(:last-child)::after {
     top: 0;
     width: 58.4%;
 }
-
 .iphone-horizontal {
     right: 6px;
 }
@@ -139,7 +136,6 @@ li:not(:last-child)::after {
     position: relative;
     
 }
-
 .slider-next-phone {
     text-align: center;
     left: 22%;
@@ -152,7 +148,6 @@ li:not(:last-child)::after {
     background-color: #648BF0;
     border-bottom: 6px solid #649BF0;
 }
-
 .phone-none {
   opacity: 0;
 }
@@ -184,7 +179,6 @@ li:not(:last-child)::after {
 .unvisible {
     visibility: hidden;
 }
-
 .start {
     background: url(./assets/img/chev.png) no-repeat;
     left: 42px;
@@ -240,7 +234,6 @@ li:not(:last-child)::after {
 .last {
     margin-right: 0;
 }
-
 .icon img {
     width: 59px;
     height: 59px;
@@ -420,6 +413,7 @@ li:not(:last-child)::after {
     height: 16px;
     fill: #656d89;
 }
+
 /* contact */
 .contact {
     padding: 60px 0 14px 0;
@@ -512,7 +506,6 @@ li:not(:last-child)::after {
     text-align: justify;
     margin-bottom: 26px;
 }
-
 .form-button {
     width: 30%;
     height: 40px;
@@ -579,7 +572,6 @@ footer {
     margin-top: 0;
     
 }
-
 .social-footer-link {
     display: block;
     text-decoration: none;
@@ -593,7 +585,6 @@ footer {
 .social-footer-link:last-child {
     margin-right: 0;
 }
-
 .social-footer-link:hover {
     background-color: #767E9E;
 }
@@ -622,7 +613,6 @@ footer {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
 }
-
 .modal-text {
     background-color: white;
     margin: 20% auto;
@@ -631,7 +621,6 @@ footer {
     border-radius: 5px;
     width: 45%;
 }
-
 .modal-text p {
     font-size: 16px;
     max-width: 100%;
@@ -654,7 +643,6 @@ footer {
 .letter {
     font-family: 'Lato-Bold', sans-serif;
 }
-
 body.lock {
     overflow: hidden;
 }
@@ -899,8 +887,6 @@ body.lock {
         display: block;
     }
 
-
-
     header {
         padding: 18px 0 15px;
     }
@@ -1102,15 +1088,6 @@ body.lock {
 }
 
 @media (max-width:  376px) {
-    /* .header-burger span {
-        top: 11px;
-    }
-    .header-burger::before {
-        top: 2px;
-    }
-    .header-burger {
-        height: 23px;
-    } */
     header {
         padding: 23px 0 18px;
     }
