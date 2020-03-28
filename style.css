@@ -69,10 +69,7 @@ li a {
     display: inline;
     letter-spacing: -0.3px;
 }
-.menu li a:hover {
-    color: #da716b;
-    cursor: pointer;
-}
+
 .nav-active {
     color: #da716b;
 }
@@ -81,7 +78,9 @@ li:not(:last-child)::after {
     margin: 0 14.2px;
     color: #494e62;
 }
-
+.burger-button {
+    display: none;
+}
 
 /* Main block */
 .main {
@@ -203,27 +202,6 @@ li:not(:last-child)::after {
     top: 47%;
     border: none;
     outline: none;
-}
-
-@keyframes next-to-screen {
-    from {
-        transform: translate(110%);
-        visibility: visible;
-    }
-    to {
-        transform: none;
-        visibility: visible;
-    }
-}
-@keyframes previous-to-screen {
-    from {
-        transform: translate(-110%);
-        visibility: visible;
-    }
-    to {
-        transform: none;
-        visibility: visible;
-    }
 }
 
 /* Services */
@@ -536,8 +514,8 @@ li:not(:last-child)::after {
 }
 
 .form-button {
-    width: 25%;
-    height: 30px;
+    width: 30%;
+    height: 40px;
     font-size: 15px;
     margin-top: 5px;
     border: none;
@@ -683,48 +661,111 @@ body.lock {
 
 
 /* Mobile */
+@media (min-width: 1020px) {
+    .menu li a:hover {
+        color: #da716b;
+        cursor: pointer;
+    }
+}
 /*max 1019 */
 @media (max-width: 1019px) {
     .main {
-        padding: 35px 0 20px;
+        padding: 10px 0 0;
     }
     .container-phone {
-        height: 450px
+        height: 435px
+    }
+    .container {
+        width: 90%;
+    }
+    .end {
+        right: -14px;
+    }
+    .start {
+        left: -8px;
+    }
+    .port-paragraph{
+        line-height: 29px;
+        letter-spacing: 0;
+        margin-top: 18px;
+    }
+    .navigation {
+        margin-bottom: 27px;
     }
     .vertical {
-        width: 34%;
-        left: 26%;
+        width: 33%;
+        left: 25%;
         top: 30px;
     }
     .avatar-left {
-        top: 79px;
-        width: 27.3%;
-        left: 27.4%;
+        top: 78px;
+        width: 26.3%;
+        left: 26.8%;
     }
     .horizontal {
-        width: 70%;
+        width: 67%;
     }
     .avatar-right {
         width: 48.3%;
         top: 129px;
-        right: 43.1%;
+        right: 44%;
     }
     .services {
-        padding: 33px 0 45px;
+        padding: 40px 0 16px;
+    }
+    .services-items {
+        margin-top: 39px;
     }
     .icon {
         width: 46%;
         margin-right: 0;
+        margin-bottom: 42px;
     }
     .services-items {
         justify-content: space-between;
     }
     .potr-pic img {
-        width: 32%;
+        width: 31.3%;
         height: 30%;
     }
     .contact {
-        padding: 60px 0 30px 0;
+        padding: 54px 0 37px 0;
+    }
+    #about {
+        padding: 52px 0 69px;
+    }
+    .team {
+        margin-top: 35px;
+    }
+    .person-name {
+        margin-top: 7px;
+    }
+    .about-person {
+        margin-top: 1px;
+    }
+    .social-icons {
+        margin-top: 13px;
+    }
+    .get-info {
+        padding-top: 25px;
+    }
+    .contact-info {
+        margin-left: 21px;
+    }
+    .common-form {
+        padding-bottom: 12px;
+    }
+    .contact-info p {
+        margin-top: 2px;
+        line-height: 22px;
+        margin-bottom: 14px;
+    }
+    #form-area {
+        height: 160px;
+        margin-bottom: 6px;
+    }
+    footer {
+        padding: 23px 0;
     }
 }
 
@@ -748,7 +789,6 @@ body.lock {
     .slider-next {
         width: 76%;
     }
-   
     .slider {
         top: 40%;
     }
@@ -759,7 +799,7 @@ body.lock {
     .avatar-left {
         top: 44px;
         width: 24%;
-        left: 27.4%;
+        left: 26.5%;
     }
     .horizontal {
         width: 60%;
@@ -870,44 +910,27 @@ body.lock {
         justify-content: center;
         width: 100%;
         font-size: 20px;
-        margin-left: -15px;
+        margin-left: 12px;
     }
 
-
-    .header-burger {
-        position: relative;
-        width: 30px;
+    .burger-button {
+        display: block;
+        position: absolute;
+        left: 20px;
+        z-index: 6;
+        width: 25px;
         height: 20px;
-        transition: all 0.5s ease;
-        z-index: 5; 
+        background-color: transparent;
+        background-image: url(./assets/img/header-burger.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: all ease 0.5s;
+        border: none;
+        padding: 0;
+        outline: none;
+        margin-top: 2px;
     }
-    .header-burger span {
-        position: absolute;
-        background-color: white;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        border-radius: 15px;
-        top: 9px;
-        z-index: 5;
-    }
-    .header-burger::before,
-    .header-burger::after {
-        content: '';
-        background-color: white;
-        border-radius: 15px;
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        z-index: 5;
-    }
-    .header-burger::before {
-        top: 1px;
-    }
-    .header-burger::after {
-        bottom: 0;
-    }
+    
     nav {
         position: fixed;
         left: -100%;
@@ -921,21 +944,21 @@ body.lock {
     }
     .menu {
         display: block;
-        margin-top: 55%;
-        margin-left: 80px;
+        margin-top: 233px;
+        margin-left: 26%;
     }
     .menu li {
         display: block;
-        margin-top: 15px;
-        font-size: 18px;
+        margin-top: 30px;
+        font-size: 23px;
     }
     li:not(:last-child)::after {
         content: '';
     }
 
-    .header-burger.burger-active {
+    .burger-button.burger-active {
         transform: rotate(90deg);
-        z-index: 5;        
+        z-index: 6;        
     }
     nav.burger-active {
         left: 0;
@@ -944,7 +967,7 @@ body.lock {
         overflow: hidden;
     }
     .logo-burger {
-        margin-left: 20px;
+        margin-left: 40px;
         justify-content: start;
     }
     .shadow::before {
@@ -965,10 +988,6 @@ body.lock {
     .slider-next {
         width: 85%;
     }
-    .slider {
-        margin-left: -28px;
-        margin-right: -19px;
-    }
     .iphone-horizontal {
         right: 10px;
     }
@@ -988,7 +1007,7 @@ body.lock {
     .avatar-left {
         top: 57px;
         width: 18.5%;
-        left: 27%;
+        left: 26%;
     }
     .iphone-horizontal {
         right: -1%;
@@ -1007,8 +1026,8 @@ body.lock {
 
 @media (max-width:  510px) {
     .slider {
-        margin-left: -31px;
-        margin-right: -27px;
+        margin-left: 0;
+        margin-right: 0;
     }
     .slider-next-phone {
         top: 10%;
@@ -1023,7 +1042,6 @@ body.lock {
     .avatar-left {
         top: 70px;
         width: 16%;
-        left: 27%;
     }
     .iphone-horizontal {
         right: -1%;
@@ -1057,7 +1075,7 @@ body.lock {
     .avatar-left {
         top: 62px;
         width: 12.1%;
-        left: 26.7%;
+        left: 25.7%;
     }
     .iphone-vertical {
         left: 17%;
@@ -1083,32 +1101,92 @@ body.lock {
     }
 }
 
-@media (max-width:  370px) {
+@media (max-width:  376px) {
+    /* .header-burger span {
+        top: 11px;
+    }
+    .header-burger::before {
+        top: 2px;
+    }
+    .header-burger {
+        height: 23px;
+    } */
+    header {
+        padding: 23px 0 18px;
+    }
+    .red-phone {
+        top: -21px;
+    }
     .slider-next-phone {
     top: 15%;
     }
     .iphone-vertical {
-        left: 20%;
+        left: 18.3%;
     }
     .vertical {
-        width: 14%;
+        width: 16%;
     }
     .avatar-left {
-        top: 61px;
-        width: 11.2%;
-        left: 26.7%;
+        top: 64px;
+        width: 13%;
+        left: 25.7%;
     }
     .iphone-horizontal {
-        right: -4%;
-        top: 0;
+        right: -3.5%;
+        top: 8px;
     }
     .horizontal {
-        width: 28%;
+        width: 32%;
         top: 77px;
     }
     .avatar-right {
-        width: 19.5%;
+        width: 22.5%;
         top: 81px;
-        right: 77.1%;
+        right: 74.1%;
+    }
+    .container-phone {
+        height: 215px;
+    }
+    .services {
+        padding: 26px 0 0;
+    }
+    .services-items {
+        margin-top: 32px;
+    }
+    .icon {
+        margin-bottom: 18px;
+    }
+    .icon:last-child {
+        margin-bottom: 7px;
+    }
+    .portfolio {
+        padding: 43px 0 20px;
+    }
+    .port-paragraph {
+        margin-bottom: 19px;
+    }
+    #about {
+        padding: 33px 0 3px;
+    }
+    .person-name {
+        margin-top: 16px;
+    }
+    .contact {
+        padding: 44px 0 7px;
+    }
+    .get-info {
+        padding-top: 20px;
+    }
+    .form-button {
+        height: 53px;
+        font-size: 20px;
+    }
+    .contacts {
+        margin-bottom: 12px;
+    }
+}
+@media (max-width: 355px) {
+    .iphone-vertical {
+        left: 20%;
     }
 }

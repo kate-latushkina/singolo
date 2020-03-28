@@ -36,7 +36,7 @@ function changeMenuActiveLink(event) {
 
 
 // Header burger
-const burgerButton = document.querySelector('.header-burger');
+const burgerButton = document.querySelector('.burger-button');
 const burgerNav = document.querySelector('nav');
 
 burgerButton.onclick = function () {
@@ -48,12 +48,12 @@ burgerButton.onclick = function () {
 };
 
 document.addEventListener('click', (e) => {
-  let isBurgerActive = document.querySelector('.header-burger').classList.contains('burger-active');
+  let isBurgerActive = document.querySelector('.burger-button').classList.contains('burger-active');
   if(isBurgerActive && e.target.tagName === 'A' || e.target.tagName === 'NAV') {
-    document.querySelector('.header-burger').classList.remove('burger-active');
+    document.querySelector('.burger-button').classList.remove('burger-active');
     document.querySelector('nav').classList.remove('burger-active');
     burgerNav.classList.remove('shadow');
-    document.querySelector('.logo').classList.remove('burger-active');
+    document.querySelector('.logo').classList.remove('logo-burger');
     document.querySelector('body').classList.remove('lock');
   }
 }, true);
